@@ -1,0 +1,44 @@
+﻿@model WebApplication3.Models.LoginDM
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <h1>Signup Now!</h1>
+    <p>Welcome Sir/Mam <br>"I hope You will Enjoy Our Services"</p>
+    @using (Html.BeginForm())
+    {
+       <div>
+        @Html.ValidationMessageFor(model => model.Username, "")
+       </div>
+        @Html.TextBoxFor(a => a.Username, new { placeholder = "Username" })
+        <div>
+        @Html.ValidationMessageFor(model => model.EmailID, "")
+        </div>
+        @Html.TextBoxFor(a => a.EmailID, new { placeholder = "Enter Email-ID" })
+        <div>
+        @Html.ValidationMessageFor(model => model.Password, "")
+        </div>
+        @Html.PasswordFor(a => a.Password, new { placeholder = "Password" })
+        <div>
+        @Html.ValidationMessageFor(model => model.ConformPassword, "")
+        </div>
+        @Html.PasswordFor(a => a.ConformPassword, new { placeholder = "Conform Password" })
+        <p class="recover">
+        </p>
+        <button type="submit">Next</button>
+    }
+    <p class="or">
+        ----- or continue with -----
+    </p>
+    <div class="icons">
+        @*<i class="fab fa-google"></i>*@
+        <i class="fab fa-github"></i>
+        <i class="fab fa-facebook"></i>
+    </div>
+    <div class="not-member">
+        Already a member? @Html.ActionLink("Login Now", "Login")
+    </div>
+</div>
+

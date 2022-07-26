@@ -1,0 +1,39 @@
+﻿@model  WebApplication3.Models.Login
+@{
+    ViewBag.Title = "SignupNext";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <h1>Signup Now!</h1>
+    <p>Welcome Sir/Mam <br>"I hope You will Enjoy Our Services"</p>
+    @using (Html.BeginForm())
+    {
+        <div>
+        @Html.ValidationMessageFor(model => model.Phone, "")
+        </div>
+        @Html.TextBoxFor(a => a.Phone, new { placeholder = "Phone Number" })
+        <div>
+        @Html.ValidationMessageFor(model => model.State, "")
+        </div>
+        @Html.DropDownListFor(a => a.State, ViewBag.state as SelectList, "Select State")
+        <div>
+        @Html.ValidationMessageFor(model => model.City, "")
+        </div>
+        @Html.TextBoxFor(a => a.City, new { placeholder = "Enter City Name" })
+        <div>
+        @Html.ValidationMessageFor(model => model.Pincode, "")
+        </div>
+        @Html.TextBoxFor(a => a.Pincode, new { placeholder = "Enter Pincode" })
+        <p class="recover">
+        </p>
+        <button type="submit">Next</button>
+    }
+    <p class="or">
+        @Html.ActionLink("Back", "Signup")
+    </p>
+    <div class="not-member">
+        Already a member? @Html.ActionLink("Login Now", "Login")
+    </div>
+</div>
+
+

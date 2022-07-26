@@ -1,0 +1,31 @@
+﻿@model WebApplication3.Models.LoginDM
+@{
+    ViewBag.Title = "OtpVarify";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <h1>Verify Number!</h1>
+    <p>Dear Sir/Mam <br>Please Enter your SMS OTP*</p>
+    @using (Html.BeginForm())
+    {
+
+        <div>
+        @Html.ValidationMessageFor(model => model.Otp, "")
+        </div>
+        @Html.TextBoxFor(a => a.Otp, new { placeholder = "Enter 4-Digit OTP" })
+        <p class="recover">
+            @Html.ActionLink("Change Number", "Signup")
+        </p>
+        <button type="submit">Varify</button>
+    }
+    <p class="or">
+        @Html.ActionLink("Resend OTP", "Signup")        
+    </p>
+    <div class="not-member">
+        Not a member? @Html.ActionLink("Back to Login", "Login")
+    </div>
+</div>
+
+
+

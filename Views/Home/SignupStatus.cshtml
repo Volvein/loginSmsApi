@@ -1,0 +1,20 @@
+﻿@model WebApplication3.Models.LoginDM
+@{
+    ViewBag.Title = "SignupStatus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="wrapper">
+    <h1>Woohoo!</h1>
+    <p>Hello <b>@ViewBag.name</b> <br>"Your Account Created Sucessfully"</p>
+    @using (Html.BeginForm())
+    {   <b>@ViewBag.email</b> 
+        <p class="recover">
+        </p>
+        <button type="submit">Back to Login</button>
+    }
+    <p class="or">
+       
+    </p>
+</div>
